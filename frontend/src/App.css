@@ -36,3 +36,72 @@
     transform: rotate(360deg);
   }
 }
+
+
+.app-container {
+  min-height: 100vh;
+  background-color: #1f2937; /* Tailwind bg-gray-900 */
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.thumbnail-card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.thumbnail-card:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail-img {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.thumbnail-card:hover .thumbnail-overlay {
+  opacity: 1;
+}
+
+.thumbnail-title {
+  color: white;
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.blur-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 40;
+  transition: opacity 0.5s;
+}
+
+.player-container {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+}
